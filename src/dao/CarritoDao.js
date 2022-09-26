@@ -1,11 +1,11 @@
 
-import {db} from '../config/dbfirebase.js';
-import { CarritosModel } from '../modules/carritos.modules.js';
-import pkg from 'firebase-admin';
+const {db} = require('../config/dbfirebase.js');
+const { CarritosModel } = require( '../modules/carritos.modules.js');
+const pkg = require('firebase-admin');
 const {admin} = pkg;
 
 
-export class CarritoDao {
+class CarritoDao {
     constructor() {
         admin.initializeApp({
             credential: admin.credential.cert(db),
@@ -85,3 +85,5 @@ export class CarritoDao {
         }
     }
 }
+
+module.exports= {CarritoDao};

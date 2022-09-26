@@ -1,12 +1,10 @@
 {
   "name": "src",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.mjs",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/server.mjs"
+    "start": "node ./src/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +17,14 @@
     "firebase-admin": "^11.0.1",
     "mongoose": "^6.6.0",
     "node.js": "^0.0.1-security"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laurab1528/Segunda_Entrega.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Laurab1528/Segunda_Entrega/issues"
+  },
+  "homepage": "https://github.com/Laurab1528/Segunda_Entrega#readme",
+  "description": ""
 }

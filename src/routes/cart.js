@@ -1,6 +1,6 @@
-import express from "express";
-import { CarritoDao } from "../dao/CarritoDao.js";
-import { ProductoDao } from "../dao/ProductoDao.js";
+const express = require ("express");
+const { CarritoDao } = require ("../dao/CarritoDao.js");
+const { ProductoDao } = require ( "../dao/ProductoDao.js");
 
 const router = express.Router();
 const carritoDao = new CarritoDao();
