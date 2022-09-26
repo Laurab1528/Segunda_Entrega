@@ -72,4 +72,4 @@ class ProductoDao {
     
 }
 
-module.exports = {ProductoDao};
+module.exports = ProductoDao;

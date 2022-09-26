@@ -86,4 +86,4 @@ class CarritoDao {
     }
 }
 
-module.exports= {CarritoDao};
+module.exports = CarritoDao;

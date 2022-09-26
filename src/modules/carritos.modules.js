@@ -1,4 +1,4 @@
-const mongoose = requiere("mongoose");
+const mongoose = require("mongoose");
 
 const Schema = new mongoose.Schema({
     timestamp: {
@@ -13,4 +13,6 @@ const Schema = new mongoose.Schema({
     ]
 });
 
-export const CarritosModel = mongoose.model("carritos", Schema);
+const CarritosModel = mongoose.model("carritos", Schema);
+
+module.exports = CarritosModel;

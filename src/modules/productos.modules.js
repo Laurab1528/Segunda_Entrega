@@ -1,4 +1,4 @@
-const mongoose = requiere(["mongoose"]);
+const mongoose = require("mongoose");
 
 const Schema = new mongoose.Schema({
     title: {
@@ -36,4 +36,6 @@ const Schema = new mongoose.Schema({
     }
 })
 
-export const ProductosModel = mongoose.model("productos", Schema);
+const ProductosModel = mongoose.model("productos", Schema);
+
+module.exports = ProductosModel;

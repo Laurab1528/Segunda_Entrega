@@ -1,15 +1,15 @@
 // Import the functions you need from the SDKs you need
-const { initializeApp } = requiere( "firebase/app");
-const { getAnalytics, isSupported } = requiere( "firebase/analytics");
+const { initializeApp } = require( "firebase/app");
+const { getAnalytics, isSupported } = require( "firebase/analytics");
 
 const analytics = require( '@react-native-firebase/analytics');
 
 analytics();
 
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/storage";
-import "firebase/analytics";
+require( "firebase/auth");
+require( "firebase/firestore");
+require( "firebase/storage");
+require( "firebase/analytics");
 
 
 
@@ -39,4 +39,4 @@ const app = initializeApp(firebaseConfig);
 const db = getAnalytics(app);
 
 
-export { db };
+module.exports = db ;
