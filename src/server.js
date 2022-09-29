@@ -1,7 +1,7 @@
-const express = require ( 'express');
-const dotenv = require ('dotenv');
-const { ProductoDao}  = require('./dao/ProductoDao.js');
-const { CarritoDao}  = require('./dao/CarritoDao.js');
+import express from  'express';
+import dotenv from 'dotenv';
+import  {ProductoDao} from './dao/ProductoDao.js';
+import  {CarritoDao}  from './dao/CarritoDao.js';
 
 
 dotenv.config();
@@ -25,7 +25,7 @@ app.use('/api/carrito', routerCart);
 
 const productoDao = new ProductoDao();
 const carritoDao = new CarritoDao();
-const productoCarritoDao = new ProductoCarritoDao();
+
 
 /* ------------------------ Product Endpoints ------------------------ */
 
@@ -110,7 +110,7 @@ routerCart.post('/:id/productos', async(req,res) => {
     const { body } = req;
     
     if (Object.prototype.hasOwnProperty.call(body, 'productId')) {
-        const newProductoCarritoId = await productoCarritoDao.saveProductToCart(id, body.productId);
+        const newProductoCarritoId = await CarritoDao.saveProductToCart(id, body.productId);
         
         newProductoCarritoId 
             ? res.status(200).json({"success": "Product added correctly to the Cart"})
@@ -126,7 +126,7 @@ routerCart.post('/:id/productos', async(req,res) => {
 routerCart.delete('/:id/productos/:id_prod', async(req, res) => {
     const {id, id_prod } = req.params;
     
-    const wasDeleted = productoCarritoDao.deleteProductFromCart(id, id_prod);
+    const wasDeleted = carritoDao.deleteProductFromCart(id, id_prod);
     
     wasDeleted 
         ? res.status(200).json({"success": "product removed from the cart"})
@@ -137,7 +137,7 @@ routerCart.delete('/:id/productos/:id_prod', async(req, res) => {
 // GET /api/carrito/:id/productos
 routerCart.get('/:id/productos', async(req, res) => {
     const { id } = req.params;
-    const cartProducts = await productoCarritoDao.getAllProductsFromCart(id); 
+    const cartProducts = await carritoDao.getAllProductsFromCart(id); 
     if (cartProducts.length) {
         res.status(200).json(cartProducts)
     } else {

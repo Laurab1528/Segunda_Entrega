@@ -1,6 +1,6 @@
-const express = require ("express");
-const { ProductoDao } = require ("../dao/ProductoDao.js");
-const { authMiddleware } = require ("../middlewares/Auth.js");
+import express from "express";
+import { ProductoDao } from "../dao/ProductoDao.js";
+import { authMiddleware } from "../middlewares/Auth.js";
 const router = express.Router();
 const productoDao = new ProductoDao();
 

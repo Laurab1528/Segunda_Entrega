@@ -1,7 +1,7 @@
-require( "../config/db.js");
-const { ProductosModel } = require("../modules/productos.modules.js");
+import "../config/db.js";
+import { ProductosModel } from "../modules/productos.modules.js";
 
-class ProductoDao {
+export class ProductoDao {
 
     ID_FIELD = "_id";
     
@@ -71,5 +71,3 @@ class ProductoDao {
     }
     
 }
-
-module.exports = ProductoDao;
